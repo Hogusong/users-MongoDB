@@ -1,11 +1,26 @@
+To understand handling data with MongoDB (model, Schema) and
+test all transactions with a library 'mocha' : 
+  create, read, update, delete, validatoin, virtual_type, and association
+
+mkdir users_mongo     -->  working folder
+cd users_mongo
 npm init  
 npm install --save mongoose nodemon mocha
-modify package.json file
+
+run 'Visual Studio' or 'Atom'
+
+open <package.json> and modify 'script'
   "test": "echo \"Error: no test specified\" && exit 1"
     to
   "test": "nodemon --exec 'mocha -R min'"
 
-Structure:
+npm run test          --> to start testing
+
+When you save any file after modify, 'nodemon' execute 'mocha' to test.
+
+to quit : press ctrl-c
+
+Structure of root:
   users_mongo
     models
       blogPost.js
@@ -20,7 +35,7 @@ Structure:
       middleware_test.js
       reading_test.js
       subdocument_test.js
-      reading_test.js
+      read_test.js
       subdocument_test.js
       test_helper.js
       update_test.js

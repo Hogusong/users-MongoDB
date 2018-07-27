@@ -29,6 +29,7 @@ describe('Creating records', () => {
           console.log(users)
           assert(users.length === 3);
           assert(users[0].name === 'Joseph')
+          assert(!narae.isNew);
           done();    
         })
       })
