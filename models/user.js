@@ -21,7 +21,7 @@ const UserSchema = new Schema({
 });
 
 // define virtual field on Schema
-UserSchema.virtual('countPosts').get(function() {
+UserSchema.virtual('postsCount').get(function() {
   return this.posts.length;
 })
 
