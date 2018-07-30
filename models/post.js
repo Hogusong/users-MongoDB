@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-module.exports = new Schema({
+const PostSchema = new Schema({
   title: {
     type: String,
     validate: {
@@ -10,5 +10,7 @@ module.exports = new Schema({
       message: 'Title must be longer than 3 characters'
     },
   },
-  createdAt: { type: Date, default: new Date() }
+  createdAt: { type: String, default: (new Date()).toJSON().slice(0,10) }
 });
+
+module.exports = PostSchema;
