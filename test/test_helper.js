@@ -10,7 +10,14 @@ before(done => {
 
 beforeEach(done => {
   const { users, comments, blogposts } = mongoose.connection.collections ;
-  if(users) users.drop(() => done());
-  if(comments) comments.drop(() => done());
-  if(blogposts) blogposts.drop(() => done());
+  if(users) users.drop(() => {
+    if(comments) {
+      comments.drop(() => {
+        if(blogposts) {
+          blogposts.drop(() => done())
+        } else done();
+      })
+    } else done();
+  })
+  else done();
 });
