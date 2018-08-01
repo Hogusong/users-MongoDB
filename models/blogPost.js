@@ -17,6 +17,13 @@ const BlogPostSchema = new Schema({
   }]
 });
 
+// middleware to remove comments before remove a blogPost
+// BlogPostSchema.pre('remove', function() {
+//   const Comment = mongoose.model('comment');
+//   Comment.remove({ _id: { $in: this.comments } })
+//     .then(() => next());
+// });
+
 const BlogPost = mongoose.model('blogPost', BlogPostSchema);
 
 module.exports = BlogPost;

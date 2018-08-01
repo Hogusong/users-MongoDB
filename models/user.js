@@ -28,8 +28,9 @@ UserSchema.virtual('postsCount').get(function() {
 // middleware to remove user's blogPosts before remove a user
 // UserSchema.pre('remove', function() {
 //   const BlogPost = mongoose.model('blogPost');
-//   BlogPost.remove({ _id: { $in: this.blogPosts } })
-//     .then(() => next());
+
+  // BlogPost.remove({ _id: { $in: this.blogPosts } })
+  //   .then(() => next());
 // });
 
 const User = mongoose.model('user', UserSchema)
