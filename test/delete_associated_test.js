@@ -37,7 +37,7 @@ describe('Delete all associated records', () => {
     young.save().then(() => done());
   });  
 
-  it.only('users clean up blogposts and comments on remove', done => {
+  it('users clean up blogposts and comments on remove', done => {
     const blogPosts = joe.blogPosts
     blogPosts.forEach(post => {
       post.comments.forEach(comment => comment.remove())
